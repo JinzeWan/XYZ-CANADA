@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XYZ Canada 3D Printing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            background-color: black;
+            color: white;
+        }
+        .logo {
+            text-align: left;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+        }
+        nav ul li {
+            margin-left: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .hero {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+        .hero img {
+            width: 100%;
+            height: auto;
+            max-height: 600px;
+            object-fit: cover;
+        }
+        .hero .text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px 40px;
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .hero .text-overlay p {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .content {
+            padding: 40px 0;
+            text-align: center;
+        }
+        .content textarea {
+            padding: 15px;
+            width: 90%;
+            max-width: 1200px;
+            height: auto;
+            min-height: 120px;
+            margin-top: 20px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .form-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .content input[type="file"] {
+            padding: 10px;
+            width: 40%;
+            max-width: 500px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .content input[type="email"] {
+            font-size: 16px;
+        }
+        .content button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .dashed-box {
+            border: 2px dashed #ddd;
+            padding: 20px;
+            background-color: white;
+            display: inline-block;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .title-large {
+            color: white;
+            font-size: 32px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .subtitle {
+            color: white;
+            font-size: 18px;
+            text-align: center;
+            max-width: 80%;
+            margin: 0 auto 30px auto;
+        }
+
+        .capabilities-section {
+            padding: 40px 0;
+            text-align: center;
+        }
+        .capabilities-section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: black;
+        }
+        .capability-card img {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .capability-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .capability-card p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .applications-section {
+            padding: 40px 0;
+            text-align: center;
+        }
+        .applications-section h2 {
+            font-size: 28px;
+            margin-bottom: 40px;
+            color: white;
+        }
+        .applications-container {
+            display: flex;
+            justify-content: space-between;  /* Ensures even spacing between cards */
+            flex-wrap: nowrap;  /* Prevents wrapping onto a new line */
+            padding: 20px 0;  /* Padding around the container */
+            gap: 10px;  /* Small gap between the boxes */
+        }
+
+        .application-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 30%;  /* Adjusted to ensure cards fit in one row */
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+        }
+
+        .application-card img {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+        .application-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .application-card p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .view-services-button {
+            display: inline-block;
+            background-color: white;
+            color: black;
+            padding: 10px 20px;
+            text-align: center;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 20px auto;
+            cursor: pointer;
+            border: 1px solid #000;
+}
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="logo">XYZ CANADA LOGO</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="service_page.html">Services</a></li>
+                <li><a href="#">Our Work</a></li>
+                <li><a href="#">Media</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <img src="p1.avif" alt="3D Printing Background">
+        <div class="text-overlay">
+            <h1>XYZ Canada</h1>
+            <p>We bring the future of manufacturing with 3D Printing Technology at an affordable price.</p>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="title-large">Custom Online 3D Printing Service</div>
+        <div class="subtitle">XYZ Canada offers an industry-leading 3D printing service online. Whether you need prototypes or production parts, we can make them on demand. We are your one-stop shop for accurate, precise, custom 3D-printed parts at an affordable price. Upload your 3D CAD file or requirements to get your quote.</div>
+        <a href="service_page.html" class="view-services-button">View Services</a>
+        <div class="dashed-box">
+            <textarea placeholder="Enter your requirements..."></textarea>
+            <br>
+            <div class="form-group">
+                <input type="file">
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="Enter your email">
+                <button type="submit" onclick="upload()">Upload</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="applications-section">
+        <h2>Applications of 3D Printing</h2>
+        <div class="applications-container">
+            <div class="application-card">
+                <img src="concept.jfif" alt="Concept Models Image">
+                <h3>Concept Models</h3>
+                <p>The speed and versatility of custom 3D printed items lets product developers create physical snapshots of their designs through the iterative process.</p>
+            </div>
+            <div class="application-card">
+                <img src="rapid.jpeg" alt="Rapid Prototyping Image">
+                <h3>Rapid Prototyping</h3>
+                <p>3D Printing can be used to create fully-functional prototypes, complete with moving parts, as well as all-in-one assemblies.</p>
+            </div>
+            <div class="application-card">
+                <img src="digital.webp" alt="Direct Digital Manufacturing Image">
+                <h3>Direct Digital Manufacturing</h3>
+                <p>The high accuracy and consistency of 3D printing makes it an ideal way to build production quantities of discrete or customized parts.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="main_page.js">
+</script>
+
+</body>
+</html>
