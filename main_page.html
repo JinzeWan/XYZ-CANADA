@@ -157,46 +157,6 @@
             color: #555;
         }
 
-        .applications-section {
-            padding: 40px 0;
-            text-align: center;
-        }
-        .applications-section h2 {
-            font-size: 28px;
-            margin-bottom: 40px;
-            color: white;
-        }
-        .applications-container {
-            display: flex;
-            justify-content: space-between;  /* Ensures even spacing between cards */
-            flex-wrap: nowrap;  /* Prevents wrapping onto a new line */
-            padding: 20px 0;  /* Padding around the container */
-            gap: 10px;  /* Small gap between the boxes */
-        }
-
-        .application-card {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            width: 30%;  /* Adjusted to ensure cards fit in one row */
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin: 10px;
-        }
-
-        .application-card img {
-            width: 150px;
-            margin-bottom: 20px;
-        }
-        .application-card h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-        .application-card p {
-            font-size: 14px;
-            color: #555;
-        }
-
         .view-services-button {
             display: inline-block;
             background-color: white;
@@ -221,10 +181,9 @@
         <div class="logo">XYZ CANADA LOGO</div>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="main_page.html">Home</a></li>
                 <li><a href="service_page.html">Services</a></li>
-                <li><a href="#">Our Work</a></li>
-                <li><a href="#">Media</a></li>
+                <li><a href="o">Our Work</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact Us</a></li>
             </ul>
@@ -241,8 +200,13 @@
 
     <div class="content">
         <div class="title-large">Custom Online 3D Printing Service</div>
-        <div class="subtitle">XYZ Canada offers an industry-leading 3D printing service online. Whether you need prototypes or production parts, we can make them on demand. We are your one-stop shop for accurate, precise, custom 3D-printed parts at an affordable price. Upload your 3D CAD file or requirements to get your quote.</div>
+        <div class="subtitle">XYZ Canada offers an industry-leading 3D printing service online. Whether you need prototypes or production parts, we can make them on demand. We are your one-stop shop for accurate, precise, custom 3D-printed parts at an affordable price. The flow chart is shown below, upload your 3D CAD file or requirements to get your quote.</div>
         <a href="service_page.html" class="view-services-button">View Services</a>
+
+        <div style="text-align: center; padding: 20px 0;">
+            <img src="Blank diagram.png" alt="Workflow Diagram" style="width: 80%; height: auto;">
+        </div>
+
         <div class="dashed-box">
             <textarea placeholder="Enter your requirements..."></textarea>
             <br>
@@ -256,26 +220,7 @@
         </div>
     </div>
 
-    <div class="applications-section">
-        <h2>Applications of 3D Printing</h2>
-        <div class="applications-container">
-            <div class="application-card">
-                <img src="concept.jfif" alt="Concept Models Image">
-                <h3>Concept Models</h3>
-                <p>The speed and versatility of custom 3D printed items lets product developers create physical snapshots of their designs through the iterative process.</p>
-            </div>
-            <div class="application-card">
-                <img src="rapid.jpeg" alt="Rapid Prototyping Image">
-                <h3>Rapid Prototyping</h3>
-                <p>3D Printing can be used to create fully-functional prototypes, complete with moving parts, as well as all-in-one assemblies.</p>
-            </div>
-            <div class="application-card">
-                <img src="digital.webp" alt="Direct Digital Manufacturing Image">
-                <h3>Direct Digital Manufacturing</h3>
-                <p>The high accuracy and consistency of 3D printing makes it an ideal way to build production quantities of discrete or customized parts.</p>
-            </div>
-        </div>
-    </div>
+
 </div>
 
 <script src="main_page.js">

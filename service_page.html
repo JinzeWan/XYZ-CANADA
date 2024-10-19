@@ -77,6 +77,45 @@
         .capability-card h3, .capability-card p {
             color: black;  /
         }
+        
+        .printing-services {
+            padding: 40px 0;
+            text-align: center;
+            background-color: black;
+            color: black;
+        }
+
+        .services-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+            gap: 20px;
+        }
+
+        .service-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 30%;
+            text-align: left;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            font-size: 14px;
+        }
+
     </style>
 </head>
 <body>
@@ -86,16 +125,38 @@
         <div class="logo">XYZ CANADA LOGO</div>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Our Work</a></li>
-                <li><a href="#">Media</a></li>
+                <li><a href="main_page.html">Home</a></li>
+                <li><a href="service_page.html">Services</a></li>
+                <li><a href="our_work_page.html">Our Work</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact Us</a></li>
             </ul>
         </nav>
     </header>
 
+    <div class="printing-services">
+        <div class="services-container">
+            <div class="service-card">
+                <h3>Standard 3D Printing</h3>
+                <img src="s_3d_p.webp" alt="FDM Printing Image" />
+                <p><strong>Price:</strong> $x/y + cost of Material</p>
+                <p>Used to print medium to large 3D prints with a wide variety of materials.</p>
+            </div>
+            <div class="service-card">
+                <h3>Resin Printing</h3>
+                <img src="r_p.webp" alt="Resin Printing Image" />
+                <p><strong>Price:</strong> $x/y</p>
+                <p>Used to create small to very small objects like miniatures or fine detail parts.</p>
+            </div>
+            <div class="service-card">
+                <h3>3D Design</h3>
+                <img src="3d_design.webp" alt="3D Design Image" />
+                <p><strong>Price:</strong> $x/y</p>
+                <p>If you have an idea or sketch, using industry-standard CAD and AI tools, we can bring your idea to life.</p>
+            </div>
+        </div>
+    </div>
+    
     <div class="capabilities-section">
         <h2>Our 3D Printing Capabilities</h2>
         <p>We have a nationalwide 3D printer network and are well known for manufacturing high-quality parts at competitive prices, from rapid prototyping with Fused Deposition Modeling (FDM) to functional end parts made with Selective Laser Sintering (SLS) or Multi Jet Fusion (MJF).</p>
@@ -134,6 +195,8 @@
 
 
 </div>
+
+<script src="service_page.js"></script>
 
 </body>
 </html>
