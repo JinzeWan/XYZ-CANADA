@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XYZ Canada 3D Printing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            background-color: black;
+            color: white;
+        }
+        .logo {
+            text-align: left;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+        }
+        nav ul li {
+            margin-left: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+
+
+        .applications-section {
+            padding: 40px 0;
+            text-align: center;
+        }
+        .applications-section h2 {
+            font-size: 28px;
+            margin-bottom: 40px;
+            color: white;
+        }
+        .applications-container {
+            display: flex;
+            justify-content: space-between;  /* Ensures even spacing between cards */
+            flex-wrap: nowrap;  /* Prevents wrapping onto a new line */
+            padding: 20px 0;  /* Padding around the container */
+            gap: 10px;  /* Small gap between the boxes */
+        }
+
+        .application-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 30%;  /* Adjusted to ensure cards fit in one row */
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+        }
+
+        .application-card img {
+            width: 300px;
+            margin-bottom: 20px;
+        }
+        .application-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .application-card p {
+            font-size: 14px;
+            color: #555;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="logo">XYZ CANADA LOGO</div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/service">Services</a></li>
+                <li><a href="/work">Our Work</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+    <div class="applications-section">
+        <h2>Applications of 3D Printing</h2>
+        <div class="applications-container">
+            <div class="application-card">
+                <img src="/images/concept.jfif" alt="Concept Models Image">
+                <h3>Concept Models</h3>
+                <p>The speed and versatility of custom 3D printed items lets product developers create physical snapshots of their designs through the iterative process.</p>
+            </div>
+            <div class="application-card">
+                <img src="/images/rapid.jpeg" alt="Rapid Prototyping Image">
+                <h3>Rapid Prototyping</h3>
+                <p>3D Printing can be used to create fully-functional prototypes, complete with moving parts, as well as all-in-one assemblies.</p>
+            </div>
+            <div class="application-card">
+                <img src="/images/digital.webp" alt="Direct Digital Manufacturing Image">
+                <h3>Direct Digital Manufacturing</h3>
+                <p>The high accuracy and consistency of 3D printing makes it an ideal way to build production quantities of discrete or customized parts.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="portfolio-section">
+        <h2 style="text-align: center; color: white; font-size: 28px;">Our Product</h2>
+        <div class="portfolio-container" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; padding: 40px 0;">
+            <div class="portfolio-card" style="flex-basis: calc(50% - 10px);">
+                <img src="/images/our_work_1.jpg" alt="Portfolio Image 1" style="width: 100%; height: auto;">
+            </div>
+            <div class="portfolio-card" style="flex-basis: calc(50% - 10px);">
+                <img src="/images/our_work_2.webp" alt="Portfolio Image 2" style="width: 100%; height: auto;">
+            </div>
+            <div class="portfolio-card" style="flex-basis: calc(50% - 10px);">
+                <img src="/images/our_work_3.jpg" alt="Portfolio Image 3" style="width: 100%; height: auto;">
+            </div>
+            <div class="portfolio-card" style="flex-basis: calc(50% - 10px);">
+                <img src="/images/our_work_4.jpg" alt="Portfolio Image 4" style="width: 100%; height: auto;">
+            </div>
+        </div>
+    </div>
+    
+
+
+</div>
+
+<script src="/js/our_work_page.js"></script>
+
+</body>
+</html>

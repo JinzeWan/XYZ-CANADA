@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XYZ Canada 3D Printing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            background-color: black;
+            color: white;
+        }
+        .logo {
+            text-align: left;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+        }
+        nav ul li {
+            margin-left: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+
+        .capabilities-section {
+            padding: 40px 0;
+            text-align: center;
+            background-color: black;
+            color: white
+        }
+        .capabilities-container {
+            display: flex;
+            justify-content: space-between;  
+            flex-wrap: nowrap;  
+            gap: 10px;  
+            padding: 20px 0;
+        }
+        .capability-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 23%;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            color: black;
+        }
+        .capability-card img {
+            width: 200px;
+            margin-bottom: 20px;
+        }
+        .capability-card h3, .capability-card p {
+            color: black;  /
+        }
+        
+        .printing-services {
+            padding: 40px 0;
+            text-align: center;
+            background-color: black;
+            color: black;
+        }
+
+        .services-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+            gap: 20px;
+        }
+
+        .service-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 30%;
+            text-align: left;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="logo">XYZ CANADA LOGO</div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/service">Services</a></li>
+                <li><a href="/work">Our Work</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="printing-services">
+        <div class="services-container">
+            <div class="service-card">
+                <h3>Standard 3D Printing</h3>
+                <img src="/images/s_3d_p.webp" alt="FDM Printing Image" />
+                <p><strong>Price:</strong> $x/y + cost of Material</p>
+                <p>Used to print medium to large 3D prints with a wide variety of materials.</p>
+            </div>
+            <div class="service-card">
+                <h3>Resin Printing</h3>
+                <img src="/images/r_p.webp" alt="Resin Printing Image" />
+                <p><strong>Price:</strong> $x/y</p>
+                <p>Used to create small to very small objects like miniatures or fine detail parts.</p>
+            </div>
+            <div class="service-card">
+                <h3>3D Design</h3>
+                <img src="/images/3d_design.webp" alt="3D Design Image" />
+                <p><strong>Price:</strong> $x/y</p>
+                <p>If you have an idea or sketch, using industry-standard CAD and AI tools, we can bring your idea to life.</p>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: center; padding: 20px 0;">
+        <img src="/images/Blank diagram.png" alt="Workflow Diagram" style="width: 80%; height: auto;">
+    </div>
+    
+    <div class="capabilities-section">
+        <h2>Our 3D Printing Capabilities</h2>
+        <p>We have a nationalwide 3D printer network and are well known for manufacturing high-quality parts at competitive prices, from rapid prototyping with Fused Deposition Modeling (FDM) to functional end parts made with Selective Laser Sintering (SLS) or Multi Jet Fusion (MJF).</p>
+        <div class="capabilities-container">
+            <div class="capability-card">
+                <img src="/images/fdn.webp" alt="FDM">
+                <h3>FDM</h3>
+                <p>Fast & affordable prototyping</p>
+                <p>Dimensional accuracy of ± 0.5% with a lower limit: ± 0.5 mm</p>
+                <p>Lead times from 1 business day</p>
+            </div>
+            <div class="capability-card">
+                <img src="/images/sls.webp" alt="SLS">
+                <h3>SLS</h3>
+                <p>Functional prototyping & low-run production</p>
+                <p>Dimensional accuracy of ± 0.3% with a lower limit: ± 0.3 mm</p>
+                <p>Lead times from 3 business days</p>
+            </div>
+            <div class="capability-card">
+                <img src="/images/mjf.jpg" alt="MJF">
+                <h3>MJF</h3>
+                <p>Functional prototyping & low-run production</p>
+                <p>Dimensional accuracy of ± 0.3% with a lower limit: ± 0.3 mm</p>
+                <p>Lead times from 3 business days</p>
+            </div>
+            <div class="capability-card">
+                <img src="/images/sla.jpg" alt="SLA">
+                <h3>SLA</h3>
+                <p>Visual prototyping</p>
+                <p>Dimensional accuracy of ± 0.3% with a lower limit: ± 0.3 mm</p>
+                <p>Lead times from 2 business days</p>
+            </div>
+        </div>
+    </div>
+    
+
+
+</div>
+
+<script src="/js/service_page.js"></script>
+
+</body>
+</html>

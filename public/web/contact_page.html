@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XYZ Canada 3D Printing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            background-color: black;
+            color: white;
+        }
+        .logo {
+            text-align: left;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+        }
+        nav ul li {
+            margin-left: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="logo">XYZ CANADA LOGO</div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/service">Services</a></li>
+                <li><a href="/work">Our Work</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="contact-section" style="background-color: #1a1a1a; padding: 40px; color: white;">
+        <div class="container">
+            <h2 style="text-align: left; color: white;">Contact Us</h2>
+            <p style="text-align: left;">Thank you for visiting XYZ Canada 3D Printing. If you have any questions, please feel free to reach out to us!</p>
+            <p style="text-align: left;">
+                <strong>Email:</strong> Radiant3dprinting@gmail.com<br>
+                <strong>Phone Number:</strong> (519)-466-3172
+            </p>
+            <div class="contact-form" style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+                <div style="flex-basis: 48%;">
+                    <form action="#" method="post">
+                        <div style="margin-bottom: 20px;">
+                            <input type="text" name="fullname" placeholder="Full name *" style="width: 100%; padding: 10px; border: none; border-radius: 5px; font-size: 16px;">
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <input type="email" name="email" placeholder="Email *" style="width: 100%; padding: 10px; border: none; border-radius: 5px; font-size: 16px;">
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <input type="text" name="casenumber" placeholder="Case number" style="width: 100%; padding: 10px; border: none; border-radius: 5px; font-size: 16px;">
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <textarea name="message" placeholder="Message *" rows="5" style="width: 100%; padding: 10px; border: none; border-radius: 5px; font-size: 16px;"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" onclick = "submit()" style="background-color: white; color: black; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+
+
+</div>
+
+<script src="/js/contact_page.js"></script>
+
+</body>
+</html>

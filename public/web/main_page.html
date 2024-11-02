@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XYZ Canada 3D Printing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            background-color: black;
+            color: white;
+        }
+        .logo {
+            text-align: left;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+        }
+        nav ul li {
+            margin-left: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .hero {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+        .hero img {
+            width: 100%;
+            height: auto;
+            max-height: 600px;
+            object-fit: cover;
+        }
+        .hero .text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px 40px;
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .hero .text-overlay p {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .content {
+            padding: 40px 0;
+            text-align: center;
+        }
+        .content textarea {
+            padding: 15px;
+            width: 90%;
+            max-width: 1200px;
+            height: auto;
+            min-height: 120px;
+            margin-top: 20px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .form-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .content input[type="file"] {
+            padding: 10px;
+            width: 40%;
+            max-width: 500px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .content input[type="email"] {
+            font-size: 16px;
+        }
+        .content button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .dashed-box {
+            border: 2px dashed #ddd;
+            padding: 20px;
+            background-color: white;
+            display: inline-block;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .title-large {
+            color: white;
+            font-size: 32px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .subtitle {
+            color: white;
+            font-size: 18px;
+            text-align: center;
+            max-width: 80%;
+            margin: 0 auto 30px auto;
+        }
+
+        .capabilities-section {
+            padding: 40px 0;
+            text-align: center;
+        }
+        .capabilities-section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: black;
+        }
+        .capability-card img {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .capability-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .capability-card p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .view-services-button {
+            display: inline-block;
+            background-color: white;
+            color: black;
+            padding: 10px 20px;
+            text-align: center;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 20px auto;
+            cursor: pointer;
+            border: 1px solid #000;
+}
+
+    </style>
+</head>
+<body onload = "init()">
+
+<div class="container">
+    <header>
+        <div class="logo">XYZ CANADA LOGO</div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/service">Services</a></li>
+                <li><a href="/work">Our Work</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <img src="/images/p1.avif" alt="3D Printing Background">
+        <div class="text-overlay">
+            <h1>XYZ Canada</h1>
+            <p>We bring the future of manufacturing with 3D Printing Technology at an affordable price.</p>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="title-large">Custom Online 3D Printing Service</div>
+        <div class="subtitle">XYZ Canada offers an industry-leading 3D printing service online. Whether you need prototypes or production parts, we can make them on demand. We are your one-stop shop for accurate, precise, custom 3D-printed parts at an affordable price. The flow chart is shown below, upload your 3D CAD file or requirements to get your quote.</div>
+        <a href="/service" class="view-services-button">View Services</a>
+
+        <div class="dashed-box">
+            <textarea placeholder="Enter your requirements..."></textarea>
+            <br>
+            <div class="form-group">
+                <input type="file">
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="Enter your email">
+                <button type="submit" onclick="upload()">Upload</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-links" style="background-color: black; padding: 20px; color: white; text-align: center;">
+        <h3>Get AI-Generated 3D Blueprints</h3>
+        <p>Explore these resources to help you generate and customize AI-based 3D models for your next project.</p>
+        <ul style="list-style: none; padding: 0;">
+            <li><a href="https://example-link1.com" style="color: #4da6ff;">AI Blueprint Generator 1</a> - Create precise and detailed 3D models using advanced AI tools.</li>
+            <li><a href="https://example-link2.com" style="color: #4da6ff;">Smart3D Designs</a> - Customize your 3D blueprints using machine learning for optimized results.</li>
+            <li><a href="https://example-link3.com" style="color: #4da6ff;">Rapid3D AI</a> - Generate functional prototypes with AI-driven design suggestions.</li>
+        </ul>
+        <p>These resources provide tools that allow you to generate and adapt 3D models efficiently, making it easier for you to achieve the designs you envision.</p>
+    </div>
+    
+
+
+</div>
+
+<script src="/js/main_page.js">
+</script>
+
+</body>
+</html>
