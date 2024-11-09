@@ -8,8 +8,8 @@ function upload() {
     let fileInput = document.querySelector('input[type="file"]');
     let file = fileInput.files[0];
 
-    if (!file) {
-        alert("Please select a file to upload.");
+    if (!emailValue) {
+        alert("Please enter your email.");
         return;
     }
 

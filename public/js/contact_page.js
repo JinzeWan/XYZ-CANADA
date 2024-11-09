@@ -1,32 +1,40 @@
-function submit() {
-    event.preventDefault();
-    
-    const fullName = document.querySelector('input[name="fullname"]').value;
-    const email = document.querySelector('input[name="email"]').value;
-    const caseNumber = document.querySelector('input[name="casenumber"]').value;
-    const message = document.querySelector('textarea[name="message"]').value;
+function init() {
+    //alert("test");
+}
 
-    const data = {
+function submit() {
+    let fullName = document.getElementById('fullname').value;
+    let email = document.getElementById('email').value;
+    let caseNumber = document.getElementById('casenumber').value;
+    let message = document.getElementById('message').value;
+
+    let data = {
         fullname: fullName,
         email: email,
         casenumber: caseNumber,
         message: message
     };
 
-    fetch('/submit-contact', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Success:', data);
-        alert('Your message has been sent successfully!');
-    })
-    .catch((error) => {
-        console.error('Error:', error);
-        alert('An error occurred while sending your message. Please try again later.');
-    });
+    if (!email) {
+        alert("Please enter your email.");
+        return;
+    } else if (!message) {
+        alert("Please enter your message.");
+        return;
+    }
+
+    let req = new XMLHttpRequest();
+    req.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            alert("We have received your request!");
+            location.reload();
+        }
+        if (this.readyState == 4 && this.status == 400) {
+            alert("Missing email or message.");
+        }
+    };
+
+    req.open("POST", "/message");
+    req.setRequestHeader("Content-Type", "application/json");
+    req.send(JSON.stringify(data));
 }

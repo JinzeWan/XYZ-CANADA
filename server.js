@@ -37,24 +37,25 @@ app.post('/submit', upload.single('file'),(req, res) => {
 
   console.log('Received requirements:', data.requirements);
   console.log('Received email:', data.email);
+  if(req.file){
   console.log('Received file:', req.file.originalname);
-    
+  }
   res.json({ message: 'Data received successfully' });
 });
 
-app.post('/submit-contact', (req, res) => {
-  const { fullname, email, casenumber, message } = req.body;
+app.post('/message', (req, res) => {
+  let data = req.body;
 
-  if (!email || !message) {
+  if (!data.email || !data.message) {
     return res.status(400).json({ error: 'Email and message are required.' });
   }
 
-  console.log('Received full name:', fullname);
-  console.log('Received email:', email);
-  console.log('Received case number:', casenumber);
-  console.log('Received message:', message);
+  console.log('Received full name:', data.fullname);
+  console.log('Received email:', data.email);
+  console.log('Received case number:', data.casenumber);
+  console.log('Received message:', data.message);
 
-  res.json({ message: 'Contact form data received successfully' });
+  res.json({ message: 'Data received successfully' });
 });
 
 app.listen(PORT, '0.0.0.0', () => {

@@ -24,11 +24,11 @@
             color: white;
         }
         .logo {
-            width:200px;
+            width: 200px;
             height: auto;
         }
         nav {
-            flex: 1px;
+            flex: 1;
             text-align: center;
             margin-right: 180px;
         }
@@ -46,12 +46,40 @@
             font-size: 16px;
             font-weight: bold;
         }
-
-
-
+        .contact-section {
+            background-color: #1a1a1a;
+            padding: 40px;
+            color: white;
+        }
+        .contact-form {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .contact-form div {
+            flex-basis: 48%;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: white;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
     </style>
 </head>
-<body>
+<body onload="init()">
 
 <div class="container">
     <header>
@@ -67,44 +95,25 @@
         </nav>
     </header>
 
-    <div class="contact-section" style="background-color: #1a1a1a; padding: 40px; color: white;">
+    <div class="contact-section">
         <div class="container">
-            <h2 style="text-align: left; color: white;">Contact Us</h2>
+            <h2 style="text-align: left;">Contact Us</h2>
             <p style="text-align: left;">Thank you for visiting XYZ Canada 3D Printing. If you have any questions, please feel free to reach out to us!</p>
             <p style="text-align: left;">
                 <strong>Email:</strong> Radiant3dprinting@gmail.com<br>
                 <strong>Phone Number:</strong> (xxx)-xxx-xxxx
             </p>
-            <div class="contact-form" style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
-                <div style="flex-basis: 48%;">
-                    <form action="#" method="post">
-                        <div style="margin-bottom: 20px;">
-                            <input type="text" name="fullname" placeholder="Full name *" style="width: 100%; padding: 10px; border: none; border-radius: 5px; font-size: 16px;">
-                        </div>
-                        <div style="margin-bottom: 20px;">
-                            <input type="email" name="email" placeholder="Email *" style="width: 100%; padding: 10px; border: none; border-radius: 5px; font-size: 16px;">
-                        </div>
-                        <div style="margin-bottom: 20px;">
-                            <input type="text" name="casenumber" placeholder="Case number" style="width: 100%; padding: 10px; border: none; border-radius: 5px; font-size: 16px;">
-                        </div>
-                        <div style="margin-bottom: 20px;">
-                            <textarea name="message" placeholder="Message *" rows="5" style="width: 100%; padding: 10px; border: none; border-radius: 5px; font-size: 16px;"></textarea>
-                        </div>
-                        <div>
-                            <button type="submit" onclick = "submit()" style="background-color: white; color: black; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">Submit</button>
-                        </div>
-                    </form>
+            <div class="contact-form">
+                <div>
+                    <input type="text" id="fullname" placeholder="Full name *">
+                    <input type="email" id="email" placeholder="Email *">
+                    <input type="text" id="casenumber" placeholder="Case number">
+                    <textarea id="message" placeholder="Message *" rows="5"></textarea>
+                    <button onclick="submit()">Submit</button>
                 </div>
             </div>
         </div>
     </div>
-    
-    
-    
-    
-    
-
-
 </div>
 
 <script src="/js/contact_page.js"></script>
