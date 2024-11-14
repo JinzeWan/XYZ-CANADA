@@ -5,72 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XYZ Canada 3D Printing</title>
     <style>
+        /* Set body background to white */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: black;
+            background-color: white;
         }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+
+        /* Full-width black header */
         header {
-            display: flex;
-            justify-content: space-between; 
-            align-items: center;
-            padding: 10px 0; 
             background-color: black;
             color: white;
+            padding: 10px 0;
+            width: 100%;
         }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
         .logo {
             width: 200px;
             height: auto;
         }
-        nav {
-            flex: 1;
-            text-align: center;
-            margin-right: 180px;
-        }
+
         nav ul {
             display: inline-flex;
             list-style: none;
             padding: 0;
         }
+
         nav ul li {
             margin: 0 15px;
         }
+
         nav ul li a {
             text-decoration: none;
             color: white;
             font-size: 16px;
             font-weight: bold;
         }
-        .contact-section {
-            background-color: #1a1a1a;
-            padding: 40px;
-            color: white;
+
+        /* Center main content with max-width */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
         }
+
+        /* Contact section styling */
+        .contact-section {
+            background-color: #f5f5f5; /* Light gray background */
+            padding: 40px;
+            color: black;
+            border-radius: 8px;
+        }
+
         .contact-form {
             display: flex;
-            justify-content: space-between;
-            gap: 20px;
+            justify-content: flex-start;
             flex-wrap: wrap;
+            gap: 20px;
         }
+
         .contact-form div {
-            flex-basis: 48%;
+            flex-basis: 100%;
         }
+
         input, textarea {
             width: 100%;
             padding: 10px;
-            border: none;
+            border: 1px solid #ddd;
             border-radius: 5px;
             font-size: 16px;
             margin-bottom: 20px;
-        }
-        button {
             background-color: white;
-            color: black;
+        }
+
+        button {
+            background-color: black;
+            color: white;
             padding: 10px 20px;
             border: none;
             border-radius: 5px;
@@ -81,9 +100,9 @@
 </head>
 <body onload="init()">
 
-<div class="container">
-    <header>
-        <img src="/images/xyz.png" class="logo">
+<header>
+    <div class="header-container">
+        <img src="/images/xyz.png" class="logo" alt="XYZ Canada Logo">
         <nav>
             <ul>
                 <li><a href="/">Home</a></li>
@@ -93,24 +112,24 @@
                 <li><a href="/contact">Contact Us</a></li>
             </ul>
         </nav>
-    </header>
+    </div>
+</header>
 
+<div class="container">
     <div class="contact-section">
-        <div class="container">
-            <h2 style="text-align: left;">Contact Us</h2>
-            <p style="text-align: left;">Thank you for visiting XYZ Canada 3D Printing. If you have any questions, please feel free to reach out to us!</p>
-            <p style="text-align: left;">
-                <strong>Email:</strong> Radiant3dprinting@gmail.com<br>
-                <strong>Phone Number:</strong> (xxx)-xxx-xxxx
-            </p>
-            <div class="contact-form">
-                <div>
-                    <input type="text" id="fullname" placeholder="Full name *">
-                    <input type="email" id="email" placeholder="Email *">
-                    <input type="text" id="casenumber" placeholder="Case number">
-                    <textarea id="message" placeholder="Message *" rows="5"></textarea>
-                    <button onclick="submit()">Submit</button>
-                </div>
+        <h2>Contact Us</h2>
+        <p>Thank you for visiting XYZ Canada 3D Printing. If you have any questions, please feel free to reach out to us!</p>
+        <p>
+            <strong>Email:</strong> Radiant3dprinting@gmail.com<br>
+            <strong>Phone Number:</strong> (xxx)-xxx-xxxx
+        </p>
+        <div class="contact-form">
+            <div>
+                <input type="text" id="fullname" placeholder="Full name *">
+                <input type="email" id="email" placeholder="Email *">
+                <input type="text" id="casenumber" placeholder="Case number">
+                <textarea id="message" placeholder="Message *" rows="5"></textarea>
+                <button onclick="submit()">Submit</button>
             </div>
         </div>
     </div>

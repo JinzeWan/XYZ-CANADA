@@ -9,28 +9,24 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: black;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
+            background-color: white;
         }
         header {
-            display: flex;
-            justify-content: space-between; 
-            align-items: center;
-            padding: 10px 0; 
             background-color: black;
             color: white;
+            padding: 10px 0;
+            width: 100vw;
+        }
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         .logo {
-            width:200px;
+            width: 200px;
             height: auto;
-        }
-        nav {
-            flex: 1px;
-            text-align: center;
-            margin-right: 180px;
         }
         nav ul {
             display: inline-flex;
@@ -46,82 +42,89 @@
             font-size: 16px;
             font-weight: bold;
         }
-        .capabilities-section {
-            padding: 40px 0;
-            text-align: center;
-            background-color: black;
-            color: white
-        }
-        .capabilities-container {
-            display: flex;
-            justify-content: space-between;  
-            flex-wrap: nowrap;  
-            gap: 10px;  
-            padding: 20px 0;
-        }
-        .capability-card {
-            background-color: white;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 20px;
-            border-radius: 8px;
-            width: 23%;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin: 10px;
-            color: black;
         }
-        .capability-card img {
-            width: 200px;
-            margin-bottom: 20px;
-        }
-        .capability-card h3, .capability-card p {
-            color: black;  /
-        }
-        
         .printing-services {
             padding: 40px 0;
             text-align: center;
-            background-color: black;
+            background-color: white;
             color: black;
         }
-
         .services-container {
             display: flex;
             justify-content: space-between;
-            flex-wrap: nowrap;
             gap: 20px;
+            flex-wrap: nowrap;
         }
-
         .service-card {
-            background-color: white;
+            background-color: #f5f5f5;
             padding: 20px;
             border-radius: 8px;
             width: 30%;
             text-align: left;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-
         .service-card img {
             width: 100%;
             height: auto;
             margin-bottom: 15px;
         }
-
         .service-card h3 {
             font-size: 18px;
             margin-bottom: 10px;
         }
-
         .service-card p {
             font-size: 14px;
         }
+        .capabilities-section {
+            padding: 40px 0;
+            text-align: center;
+            background-color: white;
+            color: black;
+        }
+        .capabilities-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            flex-wrap: nowrap;
+        }
+        .capability-card {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            width: 23%;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .capability-card img {
+            width: 200px;
+            margin-bottom: 20px;
+        }
+        .capability-card h3,
+        .capability-card p {
+            color: black;
+        }
+        @media (max-width: 768px) {
+            .services-container,
+            .capabilities-container {
+                flex-wrap: wrap;
+            }
 
+            .service-card,
+            .capability-card {
+                width: 100%; 
+            }
+        }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <header>
-        <img src="/images/xyz.png" class="logo">
+<header>
+    <div class="header-container">
+        <img src="/images/xyz.png" class="logo" alt="XYZ Canada Logo">
         <nav>
             <ul>
                 <li><a href="/">Home</a></li>
@@ -131,8 +134,11 @@
                 <li><a href="/contact">Contact Us</a></li>
             </ul>
         </nav>
-    </header>
+    </div>
+</header>
 
+
+<div class="container">
     <div class="printing-services">
         <div class="services-container">
             <div class="service-card">
@@ -159,10 +165,10 @@
     <div style="text-align: center; padding: 20px 0;">
         <img src="/images/Blank diagram.png" alt="Workflow Diagram" style="width: 80%; height: auto;">
     </div>
-    
+
     <div class="capabilities-section">
         <h2>Our 3D Printing Capabilities</h2>
-        <p>We have a nationalwide 3D printer network and are well known for manufacturing high-quality parts at competitive prices, from rapid prototyping with Fused Deposition Modeling (FDM) to functional end parts made with Selective Laser Sintering (SLS) or Multi Jet Fusion (MJF).</p>
+        <p>We have a nationwide 3D printer network and are well known for manufacturing high-quality parts at competitive prices, from rapid prototyping with Fused Deposition Modeling (FDM) to functional end parts made with Selective Laser Sintering (SLS) or Multi Jet Fusion (MJF).</p>
         <div class="capabilities-container">
             <div class="capability-card">
                 <img src="/images/fdn.webp" alt="FDM">
@@ -194,9 +200,6 @@
             </div>
         </div>
     </div>
-    
-
-
 </div>
 
 <script src="/js/service_page.js"></script>

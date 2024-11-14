@@ -21,11 +21,14 @@ function upload() {
     let req = new XMLHttpRequest();
     req.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            alert("We have received your request!");
+            alert("We have received your request! " + "The case number is " + JSON.parse(this.response).caseNumber);
             location.reload();
         }
         if (this.readyState == 4 && this.status == 400) {
             alert("Missing Email.");
+        }
+        if (this.readyState == 4 && this.status == 500) {
+            alert("Sorry! There may be a problem with the server");
         }
     };
 

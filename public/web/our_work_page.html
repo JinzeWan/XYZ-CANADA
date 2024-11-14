@@ -9,28 +9,24 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: black;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
+            background-color: white;
         }
         header {
-            display: flex;
-            justify-content: space-between; 
-            align-items: center;
-            padding: 10px 0; 
             background-color: black;
             color: white;
+            padding: 10px 0;
+            width: 100vw;
+        }
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         .logo {
-            width:200px;
+            width: 200px;
             height: auto;
-        }
-        nav {
-            flex: 1px;
-            text-align: center;
-            margin-right: 180px;
         }
         nav ul {
             display: inline-flex;
@@ -46,36 +42,40 @@
             font-size: 16px;
             font-weight: bold;
         }
-        .applications-section {
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .applications-section,
+        .portfolio-section {
             padding: 40px 0;
             text-align: center;
         }
-        .applications-section h2 {
+        .applications-section h2,
+        .portfolio-section h2 {
             font-size: 28px;
             margin-bottom: 40px;
-            color: white;
+            color: black;
         }
         .applications-container {
             display: flex;
-            justify-content: space-between;  /* Ensures even spacing between cards */
-            flex-wrap: nowrap;  /* Prevents wrapping onto a new line */
-            padding: 20px 0;  /* Padding around the container */
-            gap: 10px;  /* Small gap between the boxes */
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: nowrap;
         }
-
         .application-card {
-            background-color: white;
+            background-color: #f5f5f5;
             padding: 20px;
             border-radius: 8px;
-            width: 30%;  /* Adjusted to ensure cards fit in one row */
+            width: 30%;
             text-align: center;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin: 10px;
         }
-
         .application-card img {
-            width: 300px;
-            margin-bottom: 20px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 15px;
         }
         .application-card h3 {
             font-size: 18px;
@@ -85,15 +85,28 @@
             font-size: 14px;
             color: #555;
         }
-
-
+        .portfolio-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 20px 0;
+        }
+        .portfolio-card {
+            flex-basis: calc(50% - 10px);
+        }
+        .portfolio-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <header>
-        <img src="/images/xyz.png" class="logo">
+<header>
+    <div class="header-container">
+        <img src="/images/xyz.png" class="logo" alt="XYZ Canada Logo">
         <nav>
             <ul>
                 <li><a href="/">Home</a></li>
@@ -103,10 +116,10 @@
                 <li><a href="/contact">Contact Us</a></li>
             </ul>
         </nav>
-    </header>
+    </div>
+</header>
 
-
-
+<div class="container">
     <div class="applications-section">
         <h2>Applications of 3D Printing</h2>
         <div class="applications-container">
@@ -129,25 +142,22 @@
     </div>
 
     <div class="portfolio-section">
-        <h2 style="text-align: center; color: white; font-size: 28px;">Our Product</h2>
-        <div class="portfolio-container" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; padding: 40px 0;">
-            <div class="portfolio-card" style="flex-basis: calc(50% - 10px);">
-                <img src="/images/our_work_1.jpg" alt="Portfolio Image 1" style="width: 100%; height: auto;">
+        <h2>Our Product</h2>
+        <div class="portfolio-container">
+            <div class="portfolio-card">
+                <img src="/images/our_work_1.jpg" alt="Portfolio Image 1">
             </div>
-            <div class="portfolio-card" style="flex-basis: calc(50% - 10px);">
-                <img src="/images/our_work_2.webp" alt="Portfolio Image 2" style="width: 100%; height: auto;">
+            <div class="portfolio-card">
+                <img src="/images/our_work_2.webp" alt="Portfolio Image 2">
             </div>
-            <div class="portfolio-card" style="flex-basis: calc(50% - 10px);">
-                <img src="/images/our_work_3.jpg" alt="Portfolio Image 3" style="width: 100%; height: auto;">
+            <div class="portfolio-card">
+                <img src="/images/our_work_3.jpg" alt="Portfolio Image 3">
             </div>
-            <div class="portfolio-card" style="flex-basis: calc(50% - 10px);">
-                <img src="/images/our_work_4.jpg" alt="Portfolio Image 4" style="width: 100%; height: auto;">
+            <div class="portfolio-card">
+                <img src="/images/our_work_4.jpg" alt="Portfolio Image 4">
             </div>
         </div>
     </div>
-    
-
-
 </div>
 
 <script src="/js/our_work_page.js"></script>

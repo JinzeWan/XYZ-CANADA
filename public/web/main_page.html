@@ -9,28 +9,24 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: black;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
+            background-color: white;
         }
         header {
-            display: flex;
-            justify-content: space-between; 
-            align-items: center;
-            padding: 10px 0; 
             background-color: black;
             color: white;
+            padding: 10px 0;
+            width: 100vw;
+        }
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         .logo {
-            width:200px;
+            width: 200px;
             height: auto;
-        }
-        nav {
-            flex: 1px;
-            text-align: center;
-            margin-right: 180px;
         }
         nav ul {
             display: inline-flex;
@@ -46,10 +42,16 @@
             font-size: 16px;
             font-weight: bold;
         }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+        }
         .hero {
             position: relative;
             text-align: center;
-            color: white;
+            color: black;
         }
         .hero img {
             width: 100%;
@@ -62,47 +64,69 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(255, 255, 255, 0.8);
             padding: 20px 40px;
             font-size: 36px;
             font-weight: bold;
-        }
-        .hero .text-overlay p {
-            font-size: 16px;
-            margin-top: 10px;
+            color: black;
         }
         .content {
             padding: 40px 0;
             text-align: center;
         }
-        .content textarea {
+        .title-large {
+            color: black;
+            font-size: 32px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .subtitle {
+            color: black;
+            font-size: 18px;
+            text-align: center;
+            max-width: 80%;
+            margin: 0 auto 30px auto;
+        }
+        .dashed-box {
+            border: 2px dashed #007bff; 
+            padding: 20px;
+            background-color: #f5f5f5;
+            display: inline-block;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .content textarea, .content input[type="email"] {
             padding: 15px;
             width: 90%;
             max-width: 1200px;
             height: auto;
-            min-height: 120px;
-            margin-top: 20px;
             font-size: 16px;
             border: 1px solid #ddd;
             border-radius: 5px;
-        }
-        .form-group {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
+            background-color: white; 
             margin-top: 10px;
         }
-        .content input[type="file"] {
-            padding: 10px;
-            width: 40%;
-            max-width: 500px;
-            font-size: 16px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+        .content textarea {
+            min-height: 200px;
         }
         .content input[type="email"] {
+            width: 50%;
+        }
+        .content .file-upload-btn {
+            display: inline-block;
+            padding: 10px 20px;
             font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-align: center;
+        }
+        .content .file-upload-btn:hover {
+            background-color: #0056b3; 
         }
         .content button {
             padding: 10px 20px;
@@ -113,51 +137,15 @@
             border-radius: 5px;
             cursor: pointer;
         }
-        .dashed-box {
-            border: 2px dashed #ddd;
-            padding: 20px;
+        .footer-links {
             background-color: white;
-            display: inline-block;
-            width: 100%;
-            box-sizing: border-box;
-        }
-        .title-large {
-            color: white;
-            font-size: 32px;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .subtitle {
-            color: white;
-            font-size: 18px;
-            text-align: center;
-            max-width: 80%;
-            margin: 0 auto 30px auto;
-        }
-
-        .capabilities-section {
-            padding: 40px 0;
+            padding: 20px;
+            color: black;
             text-align: center;
         }
-        .capabilities-section h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
+        .footer-links h3 {
             color: black;
         }
-        .capability-card img {
-            width: 100%;
-            margin-bottom: 20px;
-        }
-        .capability-card h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-        .capability-card p {
-            font-size: 14px;
-            color: #555;
-        }
-
         .view-services-button {
             display: inline-block;
             background-color: white;
@@ -171,15 +159,14 @@
             margin: 20px auto;
             cursor: pointer;
             border: 1px solid #000;
-}
-
+        }
     </style>
 </head>
-<body onload = "init()">
+<body onload="init()">
 
-<div class="container">
-    <header>
-        <img src="/images/xyz.png" class="logo">
+<header>
+    <div class="header-container">
+        <img src="/images/xyz.png" class="logo" alt="XYZ Canada Logo">
         <nav>
             <ul>
                 <li><a href="/">Home</a></li>
@@ -189,8 +176,11 @@
                 <li><a href="/contact">Contact Us</a></li>
             </ul>
         </nav>
-    </header>
+    </div>
+</header>
+    
 
+<div class="container">
     <div class="hero">
         <img src="/images/p1.avif" alt="3D Printing Background">
         <div class="text-overlay">
@@ -200,24 +190,33 @@
     </div>
 
     <div class="content">
+        <div class="video-container" style="text-align: center; margin-top: 20px;">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Vx0Z6LplaMU" 
+                    title="YouTube video player" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen></iframe>
+        </div>
+        <br>
         <div class="title-large">Custom Online 3D Printing Service</div>
         <div class="subtitle">XYZ Canada offers an industry-leading 3D printing service online. Whether you need prototypes or production parts, we can make them on demand. We are your one-stop shop for accurate, precise, custom 3D-printed parts at an affordable price. The flow chart is shown below, upload your 3D CAD file or requirements to get your quote.</div>
         <a href="/service" class="view-services-button">View Services</a>
 
         <div class="dashed-box">
+            <label for="file-upload" class="file-upload-btn">
+                Upload your CAD file
+                <input type="file" id="file-upload" style="display: none;">
+            </label>
+            <br>
             <textarea placeholder="Enter your requirements..."></textarea>
             <br>
             <div class="form-group">
-                <input type="file">
-            </div>
-            <div class="form-group">
                 <input type="email" placeholder="Enter your email">
-                <button type="submit" onclick="upload()">Upload</button>
+                <button type="submit" onclick="upload()">Submit</button>
             </div>
         </div>
     </div>
 
-    <div class="footer-links" style="background-color: black; padding: 20px; color: white; text-align: center;">
+    <div class="footer-links">
         <h3>Get AI-Generated 3D Blueprints</h3>
         <p>Explore these resources to help you generate and customize AI-based 3D models for your next project.</p>
         <ul style="list-style: none; padding: 0;">
@@ -227,13 +226,9 @@
         </ul>
         <p>These resources provide tools that allow you to generate and adapt 3D models efficiently, making it easier for you to achieve the designs you envision, Or you can use our design services, you just need to provide the demand.</p>
     </div>
-    
-
-
 </div>
 
-<script src="/js/main_page.js">
-</script>
+<script src="/js/main_page.js"></script>
 
 </body>
 </html>
