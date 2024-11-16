@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XYZ Canada 3D Printing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+        }
+
+        header {
+            background-color: black;
+            color: white;
+            padding: 10px 0;
+            width: 100%;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            width: 200px;
+            height: auto;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .user-icon {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .user-icon button {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: white;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            width: 150px;
+            border-radius: 4px;
+        }
+
+        .dropdown-menu a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Login form styles */
+        .login-container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            text-align: center;
+        }
+
+        .login-container h2 {
+            color: black;
+            margin-bottom: 20px;
+        }
+
+        .login-container label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: black;
+            text-align: left;
+        }
+
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 80%; /* Adjusted width to make input fields shorter */
+            max-width: 300px; /* Optional: sets a max width */
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .login-container button {
+            width: 80%; /* Matches input width for consistency */
+            max-width: 300px;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .login-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <img src="/images/xyz.png" class="logo" alt="XYZ Canada Logo">
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/service">Services</a></li>
+                <li><a href="/work">Our Work</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="user-icon">
+            <button onclick="toggleDropdown()">
+                <img src="/images/path-to-user-icon.jpg" alt="User Icon" style="width: 40px; height: 40px;">
+            </button>
+            <div id="dropdown-menu" class="dropdown-menu">
+                <a href="/sign-in">Sign in</a>
+                <a href="/create">Create an account</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="login-container">
+    <h2>Sign In</h2>
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" required>
+
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" required>
+
+    <button onclick="sign_in()">Login</button>
+</div>
+
+
+<script src='/js/sign_in_page.js'>
+</script>
+
+</body>
+</html>

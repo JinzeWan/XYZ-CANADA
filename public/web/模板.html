@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template - XYZ Canada</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+        }
+
+        header {
+            background-color: black;
+            color: white;
+            padding: 10px 0;
+            width: 100%;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            width: 200px;
+            height: auto;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .user-icon {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .user-icon button {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: white;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            width: 150px;
+            border-radius: 4px;
+        }
+
+        .dropdown-menu a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <img src="/images/xyz.png" class="logo" alt="XYZ Canada Logo">
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/service">Services</a></li>
+                <li><a href="/work">Our Work</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="user-icon">
+            <button onclick="toggleDropdown()">
+                <img src="/images/path-to-user-icon.jpg" alt="User Icon" style="width: 40px; height: 40px;">
+            </button>
+            <div id="dropdown-menu" class="dropdown-menu">
+                <a href="/sign-in">Sign in</a>
+                <a href="/create-account">Create an account</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<script>
+    function toggleDropdown() {
+        var dropdown = document.getElementById("dropdown-menu");
+        dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+    }
+
+    // Close the dropdown if clicked outside
+    window.onclick = function(event) {
+        if (!event.target.closest('.user-icon')) {
+            var dropdown = document.getElementById("dropdown-menu");
+            if (dropdown.style.display === "block") {
+                dropdown.style.display = "none";
+            }
+        }
+    };
+</script>
+
+</body>
+</html>

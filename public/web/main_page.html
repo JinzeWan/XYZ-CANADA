@@ -9,14 +9,16 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: white;
+            background-color: white; /* Ensures the main page background is white */
         }
+
         header {
-            background-color: black;
+            background-color: black; /* Keeps only the header background black */
             color: white;
             padding: 10px 0;
-            width: 100vw;
+            width: 100%;
         }
+
         .header-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -24,41 +26,85 @@
             justify-content: space-between;
             align-items: center;
         }
+
         .logo {
             width: 200px;
             height: auto;
         }
+
         nav ul {
-            display: inline-flex;
+            display: flex;
             list-style: none;
             padding: 0;
+            margin: 0;
         }
+
         nav ul li {
             margin: 0 15px;
         }
+
         nav ul li a {
-            text-decoration: none;
-            color: white;
+            color: white; /* Keeps link color white in the header */
             font-size: 16px;
             font-weight: bold;
+            text-decoration: none;
         }
+
+        .user-icon {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .user-icon button {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%; /* Adjusts the dropdown below the button */
+            right: 0;
+            background-color: white;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            width: 150px;
+            border-radius: 4px;
+        }
+
+        .dropdown-menu a {
+            color: black; /* Ensures dropdown links are black */
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #f1f1f1;
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             background-color: white;
             padding: 20px;
         }
+
         .hero {
             position: relative;
             text-align: center;
             color: black;
         }
+
         .hero img {
             width: 100%;
             height: auto;
             max-height: 600px;
             object-fit: cover;
         }
+
         .hero .text-overlay {
             position: absolute;
             top: 50%;
@@ -70,10 +116,12 @@
             font-weight: bold;
             color: black;
         }
+
         .content {
             padding: 40px 0;
             text-align: center;
         }
+
         .title-large {
             color: black;
             font-size: 32px;
@@ -81,6 +129,7 @@
             text-align: center;
             margin-bottom: 20px;
         }
+
         .subtitle {
             color: black;
             font-size: 18px;
@@ -88,14 +137,16 @@
             max-width: 80%;
             margin: 0 auto 30px auto;
         }
+
         .dashed-box {
-            border: 2px dashed #007bff; 
+            border: 2px dashed #007bff;
             padding: 20px;
             background-color: #f5f5f5;
             display: inline-block;
             width: 100%;
             box-sizing: border-box;
         }
+
         .content textarea, .content input[type="email"] {
             padding: 15px;
             width: 90%;
@@ -104,15 +155,18 @@
             font-size: 16px;
             border: 1px solid #ddd;
             border-radius: 5px;
-            background-color: white; 
+            background-color: white;
             margin-top: 10px;
         }
+
         .content textarea {
             min-height: 200px;
         }
+
         .content input[type="email"] {
             width: 50%;
         }
+
         .content .file-upload-btn {
             display: inline-block;
             padding: 10px 20px;
@@ -125,9 +179,11 @@
             transition: background-color 0.3s ease;
             text-align: center;
         }
+
         .content .file-upload-btn:hover {
-            background-color: #0056b3; 
+            background-color: #0056b3;
         }
+
         .content button {
             padding: 10px 20px;
             font-size: 16px;
@@ -137,15 +193,18 @@
             border-radius: 5px;
             cursor: pointer;
         }
+
         .footer-links {
             background-color: white;
             padding: 20px;
             color: black;
             text-align: center;
         }
+
         .footer-links h3 {
             color: black;
         }
+
         .view-services-button {
             display: inline-block;
             background-color: white;
@@ -162,7 +221,7 @@
         }
     </style>
 </head>
-<body onload="init()">
+<body>
 
 <header>
     <div class="header-container">
@@ -176,9 +235,17 @@
                 <li><a href="/contact">Contact Us</a></li>
             </ul>
         </nav>
+        <div class="user-icon">
+            <button onclick="toggleDropdown()">
+                <img src="/images/path-to-user-icon.jpg" alt="User Icon" style="width: 40px; height: 40px;">
+            </button>
+            <div id="dropdown-menu" class="dropdown-menu">
+                <a href="/sign-in">Sign in</a>
+                <a href="/create">Create an account</a>
+            </div>
+        </div>
     </div>
 </header>
-    
 
 <div class="container">
     <div class="hero">
@@ -228,7 +295,9 @@
     </div>
 </div>
 
-<script src="/js/main_page.js"></script>
+<script src="/js/main_page.js">
+
+</script>
 
 </body>
 </html>

@@ -28,10 +28,25 @@ function upload() {
             alert("Missing Email.");
         }
         if (this.readyState == 4 && this.status == 500) {
-            alert("Sorry! There may be a problem with the server");
+            alert("Sorry! There may be a problem with the server.");
         }
     };
 
     req.open('POST', `/submit`, true);
     req.send(formData);
 }
+
+function toggleDropdown() {
+    var dropdown = document.getElementById("dropdown-menu");
+    dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+}
+
+// Optional: Close the dropdown if clicked outside
+window.onclick = function(event) {
+    if (!event.target.matches('.user-icon button') && !event.target.matches('.user-icon img')) {
+        var dropdown = document.getElementById("dropdown-menu");
+        if (dropdown.style.display === "block") {
+            dropdown.style.display = "none";
+        }
+    }
+};
