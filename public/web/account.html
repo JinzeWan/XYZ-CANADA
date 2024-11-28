@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Page - XYZ Canada</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+        }
+
+        header {
+            background-color: black;
+            color: white;
+            padding: 10px 0;
+            width: 100%;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            width: 200px;
+            height: auto;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .user-icon {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .user-icon button {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .user-icon img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: white;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            width: 150px;
+            border-radius: 4px;
+        }
+
+        .dropdown-menu a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .content-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .account-details {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .plans-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .plan-card {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border: 1px solid #ddd;
+            width: 22%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .current-plan {
+            border: 2px solid orange;
+        }
+
+        .plan-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .plan-card .price {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #0070ba;
+        }
+
+        .plan-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+            text-align: left;
+        }
+
+        .plan-card ul li {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .plan-card button {
+            background-color: #0070ba;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: auto;
+        }
+
+        .plan-card button:hover {
+            background-color: #005ea6;
+        }
+
+        .cases-container {
+            margin-top: 40px;
+        }
+
+        .cases-container h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .case {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        .separator {
+            max-width: 1200px;
+            margin: 40px auto;
+            border-top: 2px solid #ccc;
+        }
+    </style>
+</head>
+<body onload="init()">
+
+<header>
+    <div class="header-container">
+        <img src="/images/xyz.png" class="logo" alt="XYZ Canada Logo">
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/service">Services</a></li>
+                <li><a href="/resource">Resource</a></li>
+                <li><a href="/work">Our Work</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="user-icon">
+            <button onclick="toggleDropdown()">
+                <img src="/images/path-to-user-icon.jpg" alt="User Icon">
+            </button>
+            <div id="dropdown-menu" class="dropdown-menu">
+                <a href="/account" id="username-link"></a>
+                <a href="javascript:void(0);" onclick="logout()">Log out</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="content-container">
+    <div class="account-details" id="account-details">
+        <h2>Account Information</h2>
+        <p id="username"></p>
+        <p id="email"></p>
+        <p id="subscription-date"></p>
+    </div>
+    <div class="separator"></div>
+    <h2>Subscription Plans</h2>
+    <div class="plans-container">
+        <div class="plan-card" id="free-plan">
+            <h3>Free Plan</h3>
+            <div class="price">$0/month</div>
+            <ul>
+                <li>Basic usage</li>
+                <li>Free access to basic knowledge package</li>
+            </ul>
+            <button>Buy Now</button>
+        </div>
+
+        <div class="plan-card" id="individual-plan">
+            <h3>Individual Plan</h3>
+            <div class="price">$10/month</div>
+            <ul>
+                <li>Moderate usage for individuals</li>
+                <li>Discounted rates on monthly projects</li>
+                <li>Access to tutorials</li>
+            </ul>
+            <button onclick="proceedToPayment('Individual Plan', '10')">Buy Now</button>
+        </div>
+
+        <div class="plan-card" id="family-plan">
+            <h3>Family Plan</h3>
+            <div class="price">$25/month</div>
+            <ul>
+                <li>Includes multiple accounts for family</li>
+                <li>Discounted rates on monthly projects</li>
+                <li>Access to tutorials</li>
+            </ul>
+            <button onclick="proceedToPayment('Family Plan', '25')">Buy Now</button>
+        </div>
+
+        <div class="plan-card" id="institution-plan">
+            <h3>Institution Plan</h3>
+            <div class="price">$50/month</div>
+            <ul>
+                <li>Designed for schools and universities</li>
+                <li>Includes classroom kits</li>
+                <li>Training sessions for staff</li>
+            </ul>
+            <button onclick="proceedToPayment('Institution Plan', '50')">Buy Now</button>
+        </div>
+
+        <div class="plan-card" id="enterprise-plan">
+            <h3>Enterprise Plan</h3>
+            <div class="price">$100/month</div>
+            <ul>
+                <li>Unlimited design submissions</li>
+                <li>Dedicated support</li>
+                <li>Early access to new features</li>
+            </ul>
+            <button onclick="proceedToPayment('Enterprise Plan', '100')">Buy Now</button>
+        </div>
+    </div>
+    <div class="separator"></div>
+    <div class="cases-container" id="cases-container">
+        <!-- Cases will be dynamically loaded here -->
+    </div>
+</div>
+
+<script src = '/js/account.js'></script>
+
+</body>
+</html>

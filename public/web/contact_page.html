@@ -5,17 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XYZ Canada 3D Printing</title>
     <style>
-        /* Set body background to white */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: white;
+            background-color: white; /* Ensures the main page background is white */
         }
 
-        /* Full-width black header */
         header {
-            background-color: black;
+            background-color: black; /* Keeps only the header background black */
             color: white;
             padding: 10px 0;
             width: 100%;
@@ -35,9 +33,10 @@
         }
 
         nav ul {
-            display: inline-flex;
+            display: flex;
             list-style: none;
             padding: 0;
+            margin: 0;
         }
 
         nav ul li {
@@ -45,17 +44,61 @@
         }
 
         nav ul li a {
-            text-decoration: none;
-            color: white;
+            color: white; /* Keeps link color white in the header */
             font-size: 16px;
             font-weight: bold;
+            text-decoration: none;
         }
 
-        /* Center main content with max-width */
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .user-icon {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .user-icon button {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .user-icon img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%; /* Adjusts the dropdown below the button */
+            right: 0;
+            background-color: white;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            width: 150px;
+            border-radius: 4px;
+        }
+
+        .dropdown-menu a {
+            color: black; /* Ensures dropdown links are black */
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #f1f1f1;
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 20px; /* Unified padding to match the homepage */
         }
 
         /* Contact section styling */
@@ -98,7 +141,7 @@
         }
     </style>
 </head>
-<body onload="init()">
+<body onload = 'init()'>
 
 <header>
     <div class="header-container">
@@ -107,11 +150,18 @@
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/service">Services</a></li>
+                <li><a href="/resource">Resource</a></li>
                 <li><a href="/work">Our Work</a></li>
                 <li><a href="/about">About</a></li>
                 <li><a href="/contact">Contact Us</a></li>
             </ul>
         </nav>
+        <div class="user-icon">
+            <button onclick="toggleDropdown()">
+                <img src="/images/path-to-user-icon.jpg" alt="User Icon" style="width: 40px; height: 40px;">
+            </button>
+            <div id="dropdown-menu" class="dropdown-menu"></div>
+        </div>
     </div>
 </header>
 
@@ -120,12 +170,12 @@
         <h2>Contact Us</h2>
         <p>Thank you for visiting XYZ Canada 3D Printing. If you have any questions, please feel free to reach out to us!</p>
         <p>
-            <strong>Email:</strong> Radiant3dprinting@gmail.com<br>
-            <strong>Phone Number:</strong> (xxx)-xxx-xxxx
+            <strong>Email:</strong> XYZCanada@gmail.com<br>
+            <strong>Phone Number:</strong> (416)-951-1819
         </p>
         <div class="contact-form">
             <div>
-                <input type="text" id="fullname" placeholder="Full name *">
+                <input type="text" id="fullname" placeholder="Name">
                 <input type="email" id="email" placeholder="Email *">
                 <input type="text" id="casenumber" placeholder="Case number">
                 <textarea id="message" placeholder="Message *" rows="5"></textarea>

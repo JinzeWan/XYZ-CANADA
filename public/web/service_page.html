@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XYZ Canada 3D Printing</title>
+    <title>Template - XYZ Canada</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -61,7 +61,11 @@
             border: none;
             cursor: pointer;
         }
-
+        .user-icon img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
         .dropdown-menu {
             display: none;
             position: absolute;
@@ -85,53 +89,143 @@
             background-color: #f1f1f1;
         }
 
-        .container {
+        .content {
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 20px auto;
             padding: 20px;
-        }
-
-        .printing-services {
-            padding: 40px 0;
-            text-align: center;
-            background-color: white;
-            color: black;
-        }
-
-        .services-container {
             display: flex;
             justify-content: space-between;
-            gap: 20px;
-            flex-wrap: nowrap;
+            position: relative;
         }
 
-        .service-card {
-            background-color: #f5f5f5;
+        .content::after {
+            content: "";
+            display: block;
+            width: 2px;
+            border-left: 2px dashed #ccc;
+            position: absolute;
+            top: 20px;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .options {
+            width: 45%;
             padding: 20px;
-            border-radius: 8px;
-            width: 30%;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .options button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            background-color: white;
+            border: 2px solid #ddd;
+            cursor: pointer;
             text-align: left;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            outline: none;
         }
 
-        .service-card img {
+        .options button.selected {
+            border-color: #007bff;
+            background-color: #f0f8ff; /* 可选：使选中的按钮背景颜色发生变化 */
+        }
+
+        .options button:hover {
+            border-color: #007bff;
+        }
+
+        .options button:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        .options button span {
+            display: block;
+            color: #888;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .dashed-box {
+            width: 45%;
+            border: 2px dashed #ccc;
+            padding: 20px;
+            background-color: #f5f5f5;
+            display: inline-block;
+            box-sizing: border-box;
+        }
+
+        .dashed-box textarea, .dashed-box input[type="email"] {
+            padding: 15px;
             width: 100%;
             height: auto;
-            margin-bottom: 15px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            background-color: white;
+            margin-top: 10px;
+            box-sizing: border-box;
         }
 
-        .service-card h3 {
-            font-size: 18px;
+        .dashed-box textarea {
+            min-height: 300px;
+            flex-grow: 1;
+        }
+
+        .dashed-box input[type="email"] {
+            width: 100%;
             margin-bottom: 10px;
         }
 
-        .service-card p {
-            font-size: 14px;
+        .file-upload-btn {
+            display: block;
+            width: 100%;
+            margin: 15px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .file-upload-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .dashed-box button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 15px;
+            width: 100%;
+        }
+
+        .separator {
+            max-width: 1200px;
+            margin: 40px auto;
+            border-top: 2px solid #ccc;
         }
 
         .capabilities-section {
-            padding: 40px 0;
+            max-width: 1200px;
+            margin: 40px auto;
             text-align: center;
+            padding: 40px;
             background-color: white;
             color: black;
         }
@@ -139,7 +233,7 @@
         .capabilities-container {
             display: flex;
             justify-content: space-between;
-            gap: 10px;
+            gap: 20px;
             flex-wrap: nowrap;
         }
 
@@ -162,20 +256,84 @@
             color: black;
         }
 
+        .footer-links {
+            background-color: white;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            color: black;
+            text-align: center;
+        }
+
+        .footer-links .ai-link-card {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .ai-link-card img {
+            width: 150px;
+            height: 150px;
+            margin-right: 20px;
+            object-fit: cover;
+        }
+
+        .ai-link-card h2 {
+            margin: 0;
+            color: black;
+            font-size: 1.5em;
+        }
+
+        .ai-link-card p {
+            margin: 10px 0;
+            color: black;
+        }
+
+        .ai-link-card a {
+            text-decoration: none;
+            color: white;
+            background-color: #007bff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .ai-link-card a:hover {
+            background-color: #0056b3;
+        }
+
         @media (max-width: 768px) {
-            .services-container,
             .capabilities-container {
                 flex-wrap: wrap;
             }
 
-            .service-card,
             .capability-card {
                 width: 100%;
             }
         }
+
+        .process-image-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .process-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+
     </style>
 </head>
-<body>
+<body onload="init()">
 
 <header>
     <div class="header-container">
@@ -184,6 +342,7 @@
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/service">Services</a></li>
+                <li><a href="/resource">Resource</a></li>
                 <li><a href="/work">Our Work</a></li>
                 <li><a href="/about">About</a></li>
                 <li><a href="/contact">Contact Us</a></li>
@@ -194,80 +353,112 @@
                 <img src="/images/path-to-user-icon.jpg" alt="User Icon" style="width: 40px; height: 40px;">
             </button>
             <div id="dropdown-menu" class="dropdown-menu">
-                <a href="/sign-in">Sign in</a>
-                <a href="/create">Create an account</a>
             </div>
         </div>
     </div>
 </header>
 
-<div class="container">
-    <div class="printing-services">
-        <div class="services-container">
-            <div class="service-card">
-                <h3>Standard 3D Printing</h3>
-                <img src="/images/s_3d_p.webp" alt="FDM Printing Image" />
-                <p><strong>Price:</strong> $x/y + cost of Material</p>
-                <p>Used to print medium to large 3D prints with a wide variety of materials.</p>
-            </div>
-            <div class="service-card">
-                <h3>Resin Printing</h3>
-                <img src="/images/r_p.webp" alt="Resin Printing Image" />
-                <p><strong>Price:</strong> $x/y</p>
-                <p>Used to create small to very small objects like miniatures or fine detail parts.</p>
-            </div>
-            <div class="service-card">
-                <h3>3D Design</h3>
-                <img src="/images/3d_design.webp" alt="3D Design Image" />
-                <p><strong>Price:</strong> $x/y</p>
-                <p>If you have an idea or sketch, using industry-standard CAD and AI tools, we can bring your idea to life.</p>
-            </div>
+<div class="content">
+    <div class="options">
+        <button onclick="selectOption(this)" data-type="3D Printing - MJF">3D Printing - MJF<span>Functional prototypes & low-run end parts.</span></button>
+        <button onclick="selectOption(this)" data-type="3D Printing - SLS">3D Printing - SLS<span>Functional prototypes & low-run end parts.</span></button>
+        <button onclick="selectOption(this)" data-type="3D Printing - SLA">3D Printing - SLA<span>Visual prototypes.</span></button>
+        <button onclick="selectOption(this)" data-type="3D Printing - FDM">3D Printing - FDM<span>Fast & affordable firm-fit prototyping, jigs & fixtures.</span></button>
+        <button onclick="selectOption(this)" data-type="3D Design">3D Design<span>If you have an idea or sketch but don't know how to implement it, we can bring your idea to life.</span></button>
+        <button onclick="selectOption(this)" data-type="Production orders">Production orders<span>Talk to our sales team about larger orders with more complex requirements.</span></button>        
+    </div>
+    <div class="dashed-box">
+        <label for="file-upload" class="file-upload-btn">
+            Upload your CAD file
+            <input type="file" id="file-upload" style="display: none;">
+        </label>
+        <textarea placeholder="Enter your requirements..."></textarea>
+        <input type="email" placeholder="Enter your email">
+        <button type="submit" onclick="upload()">Get your quote</button>
+    </div>
+</div>
+
+<div class="separator"></div>
+
+<div class="process-image-container">
+    <img src="/images/Blank diagram.png" alt="Ordering Process Screenshot" class="process-image">
+</div>
+
+
+
+<div class="separator"></div>
+
+<div class="capabilities-section">
+    <h2>Our 3D Printing Capabilities</h2>
+    <p>We have a nationwide 3D printer network and are well known for manufacturing high-quality parts at competitive prices, from rapid prototyping with Fused Deposition Modeling (FDM) to functional end parts made with Selective Laser Sintering (SLS) or Multi Jet Fusion (MJF).</p>
+    <div class="capabilities-container">
+        <div class="capability-card">
+            <img src="/images/fdn.webp" alt="FDM">
+            <h3>FDM</h3>
+            <p>Fast & affordable prototyping</p>
+            <p>Dimensional accuracy of ± 0.5% with a lower limit: ± 0.5 mm</p>
+            <p>Lead times from 1 business day</p>
         </div>
-    </div>
-
-    <div style="text-align: center; padding: 20px 0;">
-        <img src="/images/Blank diagram.png" alt="Workflow Diagram" style="width: 80%; height: auto;">
-    </div>
-
-    <div class="capabilities-section">
-        <h2>Our 3D Printing Capabilities</h2>
-        <p>We have a nationwide 3D printer network and are well known for manufacturing high-quality parts at competitive prices, from rapid prototyping with Fused Deposition Modeling (FDM) to functional end parts made with Selective Laser Sintering (SLS) or Multi Jet Fusion (MJF).</p>
-        <div class="capabilities-container">
-            <div class="capability-card">
-                <img src="/images/fdn.webp" alt="FDM">
-                <h3>FDM</h3>
-                <p>Fast & affordable prototyping</p>
-                <p>Dimensional accuracy of ± 0.5% with a lower limit: ± 0.5 mm</p>
-                <p>Lead times from 1 business day</p>
-            </div>
-            <div class="capability-card">
-                <img src="/images/sls.webp" alt="SLS">
-                <h3>SLS</h3>
-                <p>Functional prototyping & low-run production</p>
-                <p>Dimensional accuracy of ± 0.3% with a lower limit: ± 0.3 mm</p>
-                <p>Lead times from 3 business days</p>
-            </div>
-            <div class="capability-card">
-                <img src="/images/mjf.jpg" alt="MJF">
-                <h3>MJF</h3>
-                <p>Functional prototyping & low-run production</p>
-                <p>Dimensional accuracy of ± 0.3% with a lower limit: ± 0.3 mm</p>
-                <p>Lead times from 3 business days</p>
-            </div>
-            <div class="capability-card">
-                <img src="/images/sla.jpg" alt="SLA">
-                <h3>SLA</h3>
-                <p>Visual prototyping</p>
-                <p>Dimensional accuracy of ± 0.3% with a lower limit: ± 0.3 mm</p>
-                <p>Lead times from 2 business days</p>
-            </div>
+        <div class="capability-card">
+            <img src="/images/sls.webp" alt="SLS">
+            <h3>SLS</h3>
+            <p>Functional prototyping & low-run production</p>
+            <p>Dimensional accuracy of ± 0.3% with a lower limit: ± 0.3 mm</p>
+            <p>Lead times from 3 business days</p>
+        </div>
+        <div class="capability-card">
+            <img src="/images/mjf.jpg" alt="MJF">
+            <h3>MJF</h3>
+            <p>Functional prototyping & low-run production</p>
+            <p>Dimensional accuracy of ± 0.3% with a lower limit: ± 0.3 mm</p>
+            <p>Lead times from 3 business days</p>
+        </div>
+        <div class="capability-card">
+            <img src="/images/sla.jpg" alt="SLA">
+            <h3>SLA</h3>
+            <p>Visual prototyping</p>
+            <p>Dimensional accuracy of ± 0.3% with a lower limit: ± 0.3 mm</p>
+            <p>Lead times from 2 business days</p>
         </div>
     </div>
 </div>
 
-<script src="/js/service_page.js">
+<div class="separator"></div>
 
-</script>
+<div class="footer-links">
+    <h2>Get Your AI-Generated 3D models</h2>
+    <p>Explore these resources to help you generate and customize AI-based 3D models for your next project.</p>
+    <p>These AI tools allow you to generate and adapt 3D models efficiently, making it easier for you to achieve the designs you envision. Or you can use our design services, you just need to provide the demand.</p>
+    <div class="ai-link-card">
+        <img src="/images/3d_ai_studio.jpg" alt="3D AI Studio">
+        <div>
+            <h2>3D AI Studio</h2>
+            <p>Powerful AI tools that allow you to produce 3D models from text or images.</p>
+            <br>
+            <a href="https://www.3daistudio.com/ImageTo3D">Get your 3d model</a>
+        </div>
+    </div>
+    <div class="ai-link-card">
+        <img src="/images/meshy.png" alt="Meshy">
+        <div>
+            <h2>Meshy</h2>
+            <p>Another powerful AI tool that has similar functionality to 3D AI studio.</p>
+            <br>
+            <a href="https://www.meshy.ai/">Get your 3d model</a>
+        </div>
+    </div>
+    <div class="ai-link-card">
+        <img src="/images/genie.png" alt="Genie">
+        <div>
+            <h2>Genie</h2>
+            <p>Generate functional prototypes with AI-driven design.</p>
+            <br>
+            <a href="https://lumalabs.ai/genie?view=create">Get your 3d model</a>
+        </div>
+    </div>
+</div>
+
+<script src="/js/service_page.js"></script>
 
 </body>
 </html>

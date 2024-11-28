@@ -90,6 +90,68 @@
         .dropdown-menu a:hover {
             background-color: #f1f1f1;
         }
+
+        .content-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .guides-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .guide-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .guide-section h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .guide-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .guide-section ul li {
+            margin-bottom: 8px;
+        }
+
+        .guide-section ul li a {
+            color: #0070ba;
+            text-decoration: none;
+        }
+
+        .guide-section ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .subscription-message {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff4e5;
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            color: #856404;
+            text-align: center;
+        }
+
+        .subscription-message a {
+            color: #0070ba;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .subscription-message a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body onload="init()">
@@ -101,6 +163,7 @@
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/service">Services</a></li>
+                <li><a href="/resource">Resource</a></li>
                 <li><a href="/work">Our Work</a></li>
                 <li><a href="/about">About</a></li>
                 <li><a href="/contact">Contact Us</a></li>
@@ -117,50 +180,20 @@
     </div>
 </header>
 
-<script>
-    function toggleDropdown() {
-        var dropdown = document.getElementById("dropdown-menu");
-        dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
-    }
+<div class="content-container">
+    <h2>Welcome to the Resources Section</h2>
+    <p>This page contains a variety of guides and resources to help you improve your 3D printing skills and knowledge.</p>
 
-    function init() {
-        let req = new XMLHttpRequest();
-        req.onreadystatechange = function () {
-            if (this.readyState === 4 && this.status === 200) {
-                let data = JSON.parse(this.responseText);
-                const dropdownMenu = document.getElementById("dropdown-menu");
+    <div class="guides-grid" id="guides-grid">
+        <!-- Dynamic content will be inserted here -->
+    </div>
 
-                // 根据登录状态动态调整菜单内容
-                if (data.loggedIn && data.username) {
-                    dropdownMenu.innerHTML = `
-                        <a href="/account">${data.username}</a>
-                        <a href="javascript:void(0);" onclick="logout()">Log out</a>
-                    `;
-                } else {
-                    dropdownMenu.innerHTML = `
-                        <a href="/sign-in">Sign in</a>
-                        <a href="/create">Create an account</a>
-                    `;
-                }
-            }
-        };
+    <div class="subscription-message" id="subscription-message" style="display: none;">
+        <p>Want more resources and guides? <a href="/account">Purchase our subscription plan</a> to unlock all premium content!</p>
+    </div>
+</div>
 
-        req.open('GET', `/session-data`, true);
-        req.send();
-    }
-
-    function logout() {
-        let req = new XMLHttpRequest();
-        req.onreadystatechange = function () {
-            if (this.readyState === 4 && this.status === 200) {
-                window.location.href = '/';
-            }
-        };
-
-        req.open('POST', '/logout', true);
-        req.send();
-    }
-</script>
+<script src='/js/resource.js'></script>
 
 </body>
 </html>

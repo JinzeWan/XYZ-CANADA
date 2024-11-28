@@ -1,5 +1,42 @@
-function init(){
+function init() {
+    let req = new XMLHttpRequest();
+    req.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
+            let data = JSON.parse(this.responseText);
+            const dropdownMenu = document.getElementById("dropdown-menu");
 
+            // 根据登录状态动态调整菜单内容
+            if (data.loggedIn && data.username) {
+                dropdownMenu.innerHTML = `
+                    <a href="/account">${data.username}</a>
+                    <a href="javascript:void(0);" onclick="logout()">Log out</a>
+                `;
+            } else {
+                dropdownMenu.innerHTML = `
+                    <a href="/sign-in">Sign in</a>
+                    <a href="/create">Create an account</a>
+                `;
+            }
+        }
+    };
+
+    req.open('GET', `/session-data`, true);
+    req.send();
+}
+
+function logout() {
+    let req = new XMLHttpRequest();
+    req.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            // Logout successful, redirect to home or login page
+            window.location.href = '/';
+        } else if (this.readyState == 4) {
+            console.error('Failed to logout:', req.responseText);
+        }
+    };
+
+    req.open('POST', '/logout', true);
+    req.send();
 }
 
 function upload() {
@@ -50,3 +87,35 @@ window.onclick = function(event) {
         }
     }
 };
+
+document.addEventListener("DOMContentLoaded", () => {
+    const socket = io();
+
+    // 监听服务器端发送的聊天消息
+    socket.on('chat message', (msg) => {
+        const messages = document.getElementById('messages');
+        const messageElement = document.createElement('div');
+        messageElement.textContent = msg;
+        messages.appendChild(messageElement);
+        messages.scrollTop = messages.scrollHeight;
+    });
+
+    // 发送聊天消息
+    window.sendMessage = function() {
+        const input = document.getElementById('message-input');
+        if (input.value.trim()) {
+            socket.emit('chat message', input.value);
+            input.value = '';
+        }
+    };
+
+    // 切换聊天窗口的显示/隐藏
+    window.toggleChat = function() {
+        const chatContainer = document.getElementById('chat-container');
+        if (chatContainer.style.display === 'none' || chatContainer.style.display === '') {
+            chatContainer.style.display = 'block';
+        } else {
+            chatContainer.style.display = 'none';
+        }
+    };
+});

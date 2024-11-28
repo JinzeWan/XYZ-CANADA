@@ -62,6 +62,12 @@
             cursor: pointer;
         }
 
+        .user-icon img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
         .dropdown-menu {
             display: none;
             position: absolute;
@@ -138,15 +144,6 @@
             margin: 0 auto 30px auto;
         }
 
-        .dashed-box {
-            border: 2px dashed #007bff;
-            padding: 20px;
-            background-color: #f5f5f5;
-            display: inline-block;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
         .content textarea, .content input[type="email"] {
             padding: 15px;
             width: 90%;
@@ -194,17 +191,6 @@
             cursor: pointer;
         }
 
-        .footer-links {
-            background-color: white;
-            padding: 20px;
-            color: black;
-            text-align: center;
-        }
-
-        .footer-links h3 {
-            color: black;
-        }
-
         .view-services-button {
             display: inline-block;
             background-color: white;
@@ -219,9 +205,44 @@
             cursor: pointer;
             border: 1px solid #000;
         }
+
+        .separator {
+            max-width: 1200px;
+            margin: 40px auto;
+            border-top: 2px solid #ccc;
+        }
+
+        #chat-container {
+            position: fixed;
+            right: 20px;
+            bottom: 120px;
+            width: 300px;
+            max-width: 100%;
+            border: 1px solid #ccc;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            margin: 10px;
+            display: none;
+        }
+
+        #chat-toggle {
+            position: fixed;
+            right: 20px;
+            bottom: 100px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            font-size: 24px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
     </style>
 </head>
-<body>
+<body onload="init()">
 
 <header>
     <div class="header-container">
@@ -230,6 +251,7 @@
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/service">Services</a></li>
+                <li><a href="/resource">Resource</a></li>
                 <li><a href="/work">Our Work</a></li>
                 <li><a href="/about">About</a></li>
                 <li><a href="/contact">Contact Us</a></li>
@@ -239,10 +261,7 @@
             <button onclick="toggleDropdown()">
                 <img src="/images/path-to-user-icon.jpg" alt="User Icon" style="width: 40px; height: 40px;">
             </button>
-            <div id="dropdown-menu" class="dropdown-menu">
-                <a href="/sign-in">Sign in</a>
-                <a href="/create">Create an account</a>
-            </div>
+            <div id="dropdown-menu" class="dropdown-menu"></div>
         </div>
     </div>
 </header>
@@ -257,47 +276,30 @@
     </div>
 
     <div class="content">
+        <div class="title-large">Custom Online 3D Printing Service</div>
+        <div class="subtitle">XYZ Canada offers an industry-leading 3D printing service online. Whether you need prototypes or production parts, we can make them on demand. We are your one-stop shop for accurate, precise, custom 3D-printed parts at an affordable price. The flow chart is shown below, upload your 3D CAD file or requirements to get your quote.</div>
+        <a href="/service" class="view-services-button">View Services</a>
+        <div class="separator"></div>
+        <div class="title-large">What is 3D printing?</div>        
+        <div class="subtitle">If you have this kind of confusion, the following video will give you the answer.</div>
         <div class="video-container" style="text-align: center; margin-top: 20px;">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/Vx0Z6LplaMU" 
                     title="YouTube video player" frameborder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     allowfullscreen></iframe>
         </div>
-        <br>
-        <div class="title-large">Custom Online 3D Printing Service</div>
-        <div class="subtitle">XYZ Canada offers an industry-leading 3D printing service online. Whether you need prototypes or production parts, we can make them on demand. We are your one-stop shop for accurate, precise, custom 3D-printed parts at an affordable price. The flow chart is shown below, upload your 3D CAD file or requirements to get your quote.</div>
-        <a href="/service" class="view-services-button">View Services</a>
-
-        <div class="dashed-box">
-            <label for="file-upload" class="file-upload-btn">
-                Upload your CAD file
-                <input type="file" id="file-upload" style="display: none;">
-            </label>
-            <br>
-            <textarea placeholder="Enter your requirements..."></textarea>
-            <br>
-            <div class="form-group">
-                <input type="email" placeholder="Enter your email">
-                <button type="submit" onclick="upload()">Submit</button>
-            </div>
-        </div>
     </div>
 
-    <div class="footer-links">
-        <h3>Get AI-Generated 3D Blueprints</h3>
-        <p>Explore these resources to help you generate and customize AI-based 3D models for your next project.</p>
-        <ul style="list-style: none; padding: 0;">
-            <li><a href="https://www.3daistudio.com/ImageTo3D" style="color: #4da6ff;">3D AI Studio</a> - Powerful AI tools that allow you to produce 3D models from text or images</li>
-            <li><a href="https://www.meshy.ai/" style="color: #4da6ff;">Meshy</a> - Another powerful AI tool that has similar functionality to 3D AI studio.</li>
-            <li><a href="https://lumalabs.ai/genie?view=create" style="color: #4da6ff;">Genie</a> - Generate functional prototypes with AI-driven design.</li>
-        </ul>
-        <p>These resources provide tools that allow you to generate and adapt 3D models efficiently, making it easier for you to achieve the designs you envision, Or you can use our design services, you just need to provide the demand.</p>
+    <div id="chat-container">
+        <div id="messages" style="height: 200px; overflow-y: scroll; border-bottom: 1px solid #ddd; padding-bottom: 10px;"></div>
+        <input id="message-input" type="text" placeholder="Type a message..." style="width: calc(100% - 50px);">
+        <button onclick="sendMessage()" style="width: 50px;">Send</button>
     </div>
+    <button id="chat-toggle" onclick="toggleChat()">💬</button>
 </div>
 
-<script src="/js/main_page.js">
-
-</script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/main_page.js"></script>
 
 </body>
 </html>
